@@ -18,11 +18,12 @@
 
     <style>
       .palo {
-        background-image: url("palo.png");
+        background-image: url("palito.png");
         background-position: center;
         background-repeat: no-repeat;
         display: inline-block;
-        width: 14%;
+        width: 3%;
+        margin: 0.5rem;
         height: 80px;
         max-width: 80px;
       }
@@ -32,7 +33,6 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 100vh;
       }
 
       .palo.seleccionado {
@@ -65,7 +65,9 @@
 
       .jugador {
         display: inline-block;
-        width: 100%;
+        width: 20%;
+        padding-left: 1rem;
+        padding-right: 1rem;
         max-width: 200px;
         margin: auto;
       }
@@ -73,6 +75,7 @@
       .jugador.activo {
         border: 2px solid #fff;
         border-radius: 5px;
+        object-fit: contain;
       }
 
       #vs {
@@ -82,34 +85,29 @@
 
       .jugador img {
         width: 100%;
-        height: 200px;
-        object-fit: contain;
-        vertical-align: middle;
+        height: 100px;
+        object-fit: cover;
       }
 
       #tablero {
-        max-width: 500px;
+        max-width: 400px;
         margin: auto;
         padding-top: 15px;
       }
 
-      
-
       #tablero.pierde_jugador1 {
         max-width: 500px;
         margin: auto;
-        background-image: url(/LOSER.jpg);
+        background-image: url("LOSER.jpg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position-x: center;
       }
 
-     
-
       #tablero.pierde_jugador2 {
         max-width: 500px;
         margin: auto;
-        background-image: url(/IGNACITO.jpg);
+        background-image: url("IGNACITO.jpg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position-x: center;
@@ -163,9 +161,15 @@
       }
 
       #estado {
-        margin: 10px;
-        color: rgb(0, 255, 34);
-      }
+  margin-top: -2rem;
+  padding: 10px;
+  color: yellow;
+  font-weight: bolder;
+  text-align: center; /* Centramos el texto horizontalmente */
+  text-transform: uppercase; /* Convertimos el texto a mayúsculas */
+  letter-spacing: 2px; /* Añadimos espaciado entre letras */
+}
+
 
       #procesando {
         display: none;
@@ -178,12 +182,12 @@
       }
 
       #main {
-        margin-top: 8rem;
         display: inline-block;
-        background-color: black;
+        /* background-color: black; */
         border-radius: 10%;
-        width: 600px;
-        height: 750px;
+        max-width: 100%;
+        width: 500px;
+        height: 550px;
       }
     </style>
   </head>
@@ -202,7 +206,7 @@
 
           <button id="btn_nueva_partida" class="btn">Nueva partida</button>
         </div>
-<br>
+        <br />
         <div id="estado"></div>
         <div id="procesando"><img src="cargando.gif" /></div>
 
@@ -217,10 +221,10 @@
         </div>
 
         <div id="instrucciones">
-          Hay tres filas de palos, con 7, 5 y 3 palos en cada una.<br />
+          <!-- Hay tres filas de palos, con 7, 5 y 3 palos en cada una.<br />
           Puedes retirar cualquier cantidad de palos de una fila en tu turno.<br />
           Luego es mi turno, luego el tuyo, y así sucesivamente...<br />
-          Si te queda un palo, fuiste campeón ... <br />
+          Si te queda un palo, fuiste campeón ... <br /> -->
         </div>
       </div>
     </div>
